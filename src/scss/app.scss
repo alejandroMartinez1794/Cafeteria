@@ -1,13 +1,12 @@
 @use 'header/header';
+@use 'header/navegacion';
 
 $color: red;
 $color2: blue;
 
 body {
   background-color: $color2;
-  font-size: 4rem;
-  display: flex;
-  gap: 2rem;
+
 }
 
 div {

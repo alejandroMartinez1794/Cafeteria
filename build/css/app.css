@@ -3,11 +3,12 @@
   flex-direction: column;
 }
 
+.nav {
+  background-color: blue;
+}
+
 body {
   background-color: blue;
-  font-size: 4rem;
-  display: flex;
-  gap: 2rem;
 }
 
 div {
