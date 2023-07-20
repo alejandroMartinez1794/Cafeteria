@@ -1,10 +1,15 @@
 const {src, dest, watch} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+
+
 
 function css (done) {
    
     src ('./src/scss/app.scss') // origen
-        .pipe(sass()) // que quiero hacer
+        .pipe(sass())
+        .pipe( postcss ([autoprefixer()])) // que quiero hacer
         .pipe(dest('build/css')) // destino
     done()    
 }
