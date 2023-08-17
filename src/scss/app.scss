@@ -1,15 +1,5 @@
-@use 'header/header';
-@use 'header/navegacion';
-
-$color: red;
-$color2: blue;
-
-body {
-  background-color: $color2;
-
-}
-
-div {
-  display: grid;
-  grid-template-columns: 3rem;
-}
+@use 'base';
+@use 'header';
+@use 'footer';
+@use 'inicio';
+@use 'internas';
