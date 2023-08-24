@@ -6,6 +6,8 @@ const {src, dest, watch, series, parallel} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const cssnano = require('cssnano');
 
 // depedencias de imagenes
 const gulp = require('gulp');
@@ -13,11 +15,12 @@ const imagemin = require('gulp-imagemin');
 const webp= require('gulp-webp');
 const avif= require('gulp-avif');
 
-function css (done) {
-   
+function css (done) {   
     src ('./src/scss/app.scss') // origen
+        .pipe( sourcemaps.init()) // que quiero hacer 
         .pipe(sass())
         .pipe( postcss ([autoprefixer()])) // que quiero hacer
+        .pipe( sourcemaps.write('.')) // que quiero hacer
         .pipe(dest('build/css')) // destino
     done()    
 }
