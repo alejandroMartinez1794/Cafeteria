@@ -19,7 +19,7 @@ function css (done) {
     src ('./src/scss/app.scss') // origen
         .pipe( sourcemaps.init()) // que quiero hacer 
         .pipe(sass())
-        .pipe( postcss ([autoprefixer()])) // que quiero hacer
+        .pipe( postcss ([autoprefixer(), cssnano()])) // que quiero hacer
         .pipe( sourcemaps.write('.')) // que quiero hacer
         .pipe(dest('build/css')) // destino
     done()    
